@@ -7,9 +7,14 @@ import (
 	"time"
 
 	"github.com/PrinceNorin/monga/controllers"
+	"github.com/PrinceNorin/monga/models"
 )
 
 func main() {
+	if err := models.InitGorm(); err != nil {
+		panic(err)
+	}
+
 	server := &http.Server{
 		Addr:         ":8080",
 		Handler:      controllers.Router,

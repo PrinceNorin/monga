@@ -1,0 +1,3 @@
+#!/bin/sh
+
+find . -type f \( -name "*.go" -o -name "*.yml" -o -name "*.yaml" \) | grep -v vendor/ | entr -r ./compile

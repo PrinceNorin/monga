@@ -32,3 +32,19 @@
 [[constraint]]
   name = "github.com/gin-gonic/gin"
   version = "1.2.0"
+
+[[constraint]]
+  name = "github.com/jinzhu/gorm"
+  version = "1.9.1"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/jinzhu/configor"
+
+[[constraint]]
+  name = "gopkg.in/go-playground/validator.v9"
+  version = "9.21.0"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/iancoleman/strcase"

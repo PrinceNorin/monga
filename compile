@@ -1,0 +1,7 @@
+#!/bin/sh
+
+pkill monga && echo "Killing server process..."
+rm -f ./monga && echo "Removing old server binary..."
+
+echo "Building & Restarting a new server instance..."
+go build . && ./monga

@@ -1,2 +1,7 @@
 monga
 vendor/
+
+.DS_Store
+config/*.yml
+!config/config.yml
+

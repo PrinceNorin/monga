@@ -1,0 +1,14 @@
+name: Monga
+
+db:
+  type:
+  params:
+  max_idle:
+  max_open:
+
+logger:
+  enabled:
+  filename:
+
+time:
+  zone: UTC
