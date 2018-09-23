@@ -40,5 +40,11 @@ func InitGorm() error {
 			db.SetLogger(log.New(f, "\r\n", 0))
 		}
 	}
+
+	if err := runMigrate(db); err != nil {
+		return err
+	}
+
+	ORM = db
 	return nil
 }
