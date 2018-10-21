@@ -1,6 +1,9 @@
 package messages
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/PrinceNorin/monga/utils/errors"
+	"github.com/gin-gonic/gin"
+)
 
 type Messages struct {
 	c      *gin.Context
@@ -20,13 +23,13 @@ func GetMessages(c *gin.Context) *Messages {
 	return msg
 }
 
-func (msg *Messages) AddError(key, message string) {
-	msg.errors[key] = append(msg.errors[key], message)
+func (msg *Messages) AddError(key string, err error) {
+	msg.errors[key] = append(msg.errors[key], err.Error())
 	msg.setInContext()
 }
 
-func (msg *Messages) Error(key string, err error) {
-	msg.AddError(key, err.Error())
+func (msg *Messages) Error() string {
+	return errors.ErrValidation.Error()
 }
 
 func (msg *Messages) GetAllErrors() map[string][]string {
