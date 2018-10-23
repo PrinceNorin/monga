@@ -12,3 +12,6 @@ logger:
 
 time:
   zone: UTC
+
+upload:
+  dir: public/upload/

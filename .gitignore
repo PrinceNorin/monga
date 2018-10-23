@@ -5,3 +5,4 @@ vendor/
 config/*.yml
 !config/config.yml
 
+public/upload/
