@@ -8,6 +8,7 @@ type Config struct {
 	DB     dbStruct     `yaml:"db"`
 	Time   timeStruct   `yaml:"time"`
 	Logger loggerStruct `yaml:"logger"`
+	Upload uploadStruct `yaml:"upload"`
 }
 
 type dbStruct struct {
@@ -24,6 +25,10 @@ type timeStruct struct {
 type loggerStruct struct {
 	Enabled  bool   `yaml:"enabled"`
 	Filename string `yaml:"filename,omitempty"`
+}
+
+type uploadStruct struct {
+	Dir string `yaml:"dir"`
 }
 
 func (c *Config) GetLocation() *time.Location {
